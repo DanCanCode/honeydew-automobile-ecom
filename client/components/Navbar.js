@@ -10,7 +10,7 @@ const Navbar = ({ handleClick, isLoggedIn, userId, isAdmin }) => {
     <motion.div 
       className="
       align-middle
-      bg-blue-900 
+      bg-pink-800 
       rounded-b-full 
       sticky 
       top-0 
@@ -47,34 +47,35 @@ const Navbar = ({ handleClick, isLoggedIn, userId, isAdmin }) => {
       }} 
       className="
       text-center
-      font-extrabold
+      text-white
+      font-bold
       py-4
-      ">Grace Shopper Honeydew</motion.h1>
-      <nav className="flex flex-col justify-center mb-3 border-none z-10">
+      ">Honeydew Automobiles</motion.h1>
+      <nav className="flex flex-col justify-center mb-3 border-none z-10 text-white">
         {isLoggedIn ? (
-          <div className="flex justify-center border-none">
+          <div className="flex justify-center border-none space-x-6">
             {/* The navbar will show these links after you log in */}
-            <Link className="mx-2" to="/cars">Store</Link>
+            <Link  to="/cars">Store</Link>
             {/* <Link to="/users">Users</Link> */}
 
-            <Link className="mx-2" to={`/users/${userId}`}>Profile</Link>
+            <Link  to={`/users/${userId}`}>Profile</Link>
             {isAdmin?
             (
-            <Link className="mx-2" to="/users">Users</Link>
+            <Link  to="/users">Users</Link>
             )
             :<></>}
-            <a className="mx-2" href="#" onClick={handleClick}>
+            <a  href="#" onClick={handleClick}>
               Logout
             </a>
             <Link className="mx-2" to="/cart">Cart</Link>
           </div>
         ) : (
-          <div className="flex justify-center border-none">
+          <div className="flex justify-center border-none space-x-6">
             {/* The navbar will show these links before you log in */}
-            <Link className="mx-2" to="/login">Login</Link>
-            <Link className="mx-2" to="/signup">Sign Up</Link>
-            <Link className="mx-2" to="/cars">Store</Link>
-            <Link className="mx-2" to="/cart">Cart</Link>
+            <Link  to="/cars">Store</Link>
+            <Link  to="/signup">Sign Up</Link>
+            <Link  to="/login">Login</Link>
+            <Link  to="/cart">Cart</Link>
           </div>
         )}
       </nav>
