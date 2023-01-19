@@ -1,5 +1,7 @@
 # (Graceshopper Honeydew) Automobile E-commerce Website
 
+![Honeydew Automobiles](./public/honeydew-desktop.png)
+
 Admin account:
  - Username: Bob
  - Password: 123456789
