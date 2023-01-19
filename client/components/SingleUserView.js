@@ -13,7 +13,7 @@ class SingleUserView extends React.Component {
     const user = this.props.userData;
     console.log(user)
     return (
-      <div>
+      <div className='text-white h-screen text-center'>
         {user ? (
           <div>
             <h1>USER: {user.name}</h1>

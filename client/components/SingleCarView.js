@@ -19,6 +19,7 @@ class SingleCarView extends React.Component{
     }
     handleCart(cardata){
         this.props.addedToCart(cardata, this.props.cart)
+        window.alert(`${cardata.make} ${cardata.model} (${cardata.year}) added to cart!`)
     }
     render(){
         const cardata = this.props.cardata
@@ -26,7 +27,7 @@ class SingleCarView extends React.Component{
         const randomy = Math.ceil((Math.random() < 0.5 ? -1 : 1) * (Math.random()*100))
         const randomDelay = Math.floor(Math.random()*.4)
         return (
-            <div className='flex flex-col'>{ cardata ? 
+            <div className='flex flex-col h-screen'>{ cardata ? 
                 (<motion.div 
                     initial={{
                         opacity: 0,
@@ -43,7 +44,7 @@ class SingleCarView extends React.Component{
                       transition={{
                         delay: randomDelay
                       }}
-                    className='flex flex-col justify-center border-2 border-blue-900 rounded-3xl m-2 '>
+                    className='flex flex-col justify-center shadow-lg shadow-blue-500/50 bg-white rounded-3xl my-2 max-w-6xl mx-auto'>
                     {this.props.isAdmin? <h2>ADMIN VIEW</h2> : <></>}
                     <div className='flex justify-center'><h1 className=' text-3xl'>{cardata.year} {cardata ? cardata.make : 'Loading make'} {cardata ? cardata.model : 'Loading model'}</h1></div>
                     <div className='flex justify-center'><img className='w-1/4' src= {cardata.imageUrl}/></div>
@@ -52,7 +53,7 @@ class SingleCarView extends React.Component{
                     <div className='flex justify-center'><h2>Model: {cardata.model}</h2></div>
                     <div className='flex justify-center'><h2>Color: {cardata.color}</h2></div>
                     <div className='flex justify-center'><h2>Price: {cardata.price}</h2></div>
-                    <div className='flex justify-center'><h2 className=''>Description: {cardata.description}</h2></div>
+                    <div className='flex justify-center px-6'><h2 className=''>Description: {cardata.description}</h2></div>
                     <div className='flex justify-center'><h2>Stock: {cardata.quantity}</h2></div>
                     <div className='flex justify-center m-2'><button className={buttons} type='button' onClick={()=>{this.handleCart(cardata)}}>Add to cart</button></div>
                     {this.props.isAdmin? (

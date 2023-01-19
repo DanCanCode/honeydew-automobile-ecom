@@ -6,7 +6,7 @@ import Routes from './Routes'
 
 const App = () => {
   return (
-    <div>
+    <div className='gradient-bg-welcome'>
       <LayoutGroup>
         <Navbar />
         <Routes />

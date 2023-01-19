@@ -14,6 +14,7 @@ const Navbar = ({ handleClick, isLoggedIn, userId, isAdmin }) => {
       rounded-b-full 
       sticky 
       top-0 
+      overflow-hidden
       border-none 
       justify-center 
       flex 

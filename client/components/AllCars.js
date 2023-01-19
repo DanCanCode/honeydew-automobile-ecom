@@ -21,11 +21,13 @@ class AllCars extends React.Component {
   }
 
   handleClick(car) {
+    console.log(car)
     if (!!this.props.auth) {
       this.props.addedToCart(car, this.props.cart, this.props.auth);
     } else {
       this.props.addedToCart(car, this.props.cart, -1);
     }
+    window.alert(`${car.make} ${car.model} (${car.year}) added to cart!`)
   }
 
   render() {
@@ -42,7 +44,7 @@ class AllCars extends React.Component {
         ) : (
           <></>
         )}
-        <div className="flex flex-row flex-wrap justify-center">
+        <div className="flex flex-row flex-wrap justify-center gap-3">
           {/* <div> */}
           {this.props.cars.map((car) => {
             const randomX = Math.ceil((Math.random() < 0.5 ? -1 : 1) * (Math.random()*100))
@@ -66,16 +68,15 @@ class AllCars extends React.Component {
                   delay: randomDelay
                 }}
                 key={car.id}
-                className="flex flex-col justify-center border-2 border-blue-900 rounded-xl m-2 p-2"
+                className="flex flex-col shadow-lg shadow-blue-500/50 justify-center bg-white rounded-xl m-2 p-2"
               >
                 <Link to={`/cars/${car.id}`}>
                   <div className="flex flex-col justify-center text-center items-center">
-                    <motion.img
-                      whileHover={{ scale: 2 }}
+                    <img
                       className="rounded-xl w-80 h-48"
                       src={car.imageUrl}
                     />
-                    <p className="truncate w-80">
+                    <p className="truncate w-80 font-semibold">
                       {car.make} {car.model} ({car.year})
                     </p>
                     <p>

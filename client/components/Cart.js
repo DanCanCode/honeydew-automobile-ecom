@@ -47,13 +47,13 @@ class Cart extends React.Component{
         let cartTotal = 0
         let numberOfItems = 0
         return (
-            <div className='flex flex-col justify-center'>
+            <div className='flex flex-col justify-center h-screen'>
                 <div className='flex justify-center'>
-                    <h1 className=' text-3xl'>{username ? username : "guest"}'s cart</h1>
+                    <h1 className='text-white capitalize text-3xl'>{username ? username : "guest"}'s cart</h1>
                 </div>
                 <div className='flex flex-row justify-center'>
                 {
-                    cartdata ?
+                    cartdata  ?
                     cartdata.map
                     ((cartItem) =>
                         {
@@ -80,7 +80,7 @@ class Cart extends React.Component{
                                   transition={{
                                     delay: randomDelay
                                   }}
-                                 className='flex flex-col justify-center border-blue-900 border-2 rounded-3xl m-2' key={cartItem.item.id}>
+                                 className='flex flex-col justify-center shadow-lg shadow-blue-500/50 bg-white rounded-3xl m-2' key={cartItem.item.id}>
                                     <div className='flex justify-center'><h2>{cartItem.item.name}</h2></div>
                                     <div className='flex justify-center'><img className='w-96 h-52 justify-center m-2' src={cartItem.item.imageUrl}/></div>
                                     <div className='flex justify-center'><h2 className='text-center m-2'>Price: {cartItem.item.price}</h2></div>
@@ -94,9 +94,9 @@ class Cart extends React.Component{
                     : "Theres nothing in the cart"
                 }
                 </div>
-                <div className='flex flex-col justify-center m-2'>
+                <div className='flex flex-col justify-center m-2 text-white'>
                     <div className='flex justify-center'><h2>Number of items in cart: {numberOfItems}</h2></div>
-                    <div className='flex justify-center'><h2>Subtotal: {cartTotal}</h2></div>
+                    <div className='flex justify-center'><h2>Subtotal: ${cartTotal}</h2></div>
                     <div className='flex justify-center'><button className={ buttons } type='button' onClick={()=> (this.handleCheckout(cartdata, numberOfItems, cartTotal, this.props.auth))}> Checkout</button> </div>
                 </div>
             </div>

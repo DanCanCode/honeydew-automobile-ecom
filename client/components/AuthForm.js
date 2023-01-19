@@ -13,6 +13,7 @@ const AuthForm = (props) => {
   const randomy = Math.ceil((Math.random() < 0.5 ? -1 : 1) * (Math.random()*100))
   const randomDelay = Math.floor(Math.random()*1.5)
   return (
+    <div className='h-screen'>
     <motion.div
         initial={{
           opacity: 0,
@@ -50,6 +51,7 @@ const AuthForm = (props) => {
         </form>
       </div>
     </motion.div>
+    </div>
   );
 };
 
