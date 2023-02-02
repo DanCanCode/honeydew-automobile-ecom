@@ -4,7 +4,7 @@
 
 ## Description
 
-Honeydew automobiles is a basic ecommerce website used to demonstrate CRUD functions. This app is built on the PERN stack and utilizes sequelize, tailwindcss, and framer motion. This project is associated with Fullstack Academy 2202 cohort
+Rev your engines with Honeydew Automobiles - the ultimate online marketplace for your automotive needs. Shop a vast selection of vehicles with ease, all from the comfort of your own home. Developed with cutting-edge PERN stack technology, this e-commerce website boasts effortless user experience, from profile management to cart customization and order tracking. Elevate your browsing journey with fluid animations powered by Framer Motion. Proudly built by a skilled team of 4 engineers at Fullstack Academy.
 
 Admin account:
  - Username: Bob
